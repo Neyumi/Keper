@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Image Translator Tool",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://localhost:5000/"
+  ],
+  "action": {
+    "default_title": "Translate Images"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
